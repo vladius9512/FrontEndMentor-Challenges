@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .container {
@@ -23,18 +23,25 @@ body {
     color: hsl(220, 15%, 55%);
     background-color: hsl(0, 0%, 100%);
     border-radius: 20px;
-    margin: 0 15px;
-    max-width: 340px;
+    max-width: 320px;
 }
 
-.heavy-font {
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+h1 {
     font-weight: 700;
-    margin-bottom: 15px;
     color: hsl(218, 44%, 22%);
     font-size: 20px;
+    text-align: center;
+    margin: 0 0.9rem;
 }
 p {
     font-weight: 400;
+    text-align: center;
+    margin: 1rem 0.9rem 1rem 0.9rem;
 }
 img {
     max-width: 310px;
