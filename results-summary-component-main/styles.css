@@ -31,10 +31,10 @@
     font-size: var(--body-font-size);
 }
 
-body {
-    min-height: 100vh;
+.content-wrapper {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .topside-wrapper {
@@ -185,4 +185,37 @@ p {
     padding: 1rem;
     border: none;
     border-radius: 2rem;
+}
+
+@media screen and (min-width: 720px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .content-wrapper {
+        flex-direction: row;
+        min-height: 50vh;
+        max-width: 650px;
+        border-radius: 2rem;
+        box-shadow: 10px 5px 5px #e8eefc;
+    }
+    .topside-wrapper {
+        border-radius: 30px 30px 30px 30px;
+    }
+    .button-container {
+        margin: 1rem 0;
+    }
+    .continue {
+        padding: 0.7rem;
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0%;
+    }
+    .topside-wrapper {
+        width: 50%;
+    }
 }
