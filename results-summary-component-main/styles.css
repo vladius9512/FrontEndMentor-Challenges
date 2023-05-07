@@ -1,11 +1,11 @@
 :root {
-    --light-red: hsla(0, 100%, 67%, 0.1);
+    --light-red: hsla(0, 100%, 67%, 0.05);
     --light-red-n: hsl(0, 100%, 67%);
-    --orangey-yellow: hsla(39, 100%, 56%, 0.1);
+    --orangey-yellow: hsla(39, 100%, 56%, 0.05);
     --orangey-yellow-n: hsl(39, 100%, 56%);
-    --green-teal: hsla(166, 100%, 37%, 0.1);
+    --green-teal: hsla(166, 100%, 37%, 0.05);
     --green-teal-n: hsl(166, 100%, 37%);
-    --cobalt-blue: hsla(234, 85%, 45%, 0.1);
+    --cobalt-blue: hsla(234, 85%, 45%, 0.05);
     --cobalt-blue-n: hsl(234, 85%, 45%);
 
     --background-light-slate-blue: hsla(252, 100%, 67%, 1);
@@ -120,6 +120,7 @@ p {
     justify-content: space-between;
     align-items: center;
     border-radius: 0.5rem;
+    padding: 0.4rem;
 }
 
 .reaction {
@@ -185,6 +186,15 @@ p {
     padding: 1rem;
     border: none;
     border-radius: 2rem;
+    font-weight: 800;
+}
+
+.continue:hover {
+    background: linear-gradient(
+        var(--background-light-royal-blue-top),
+        var(--background-light-royal-blue-bottom)
+    );
+    cursor: pointer;
 }
 
 @media screen and (min-width: 720px) {
@@ -199,7 +209,10 @@ p {
         min-height: 50vh;
         max-width: 650px;
         border-radius: 2rem;
-        box-shadow: 10px 5px 5px #e8eefc;
+        box-shadow: 10px 5px 40px #e8eefc;
+    }
+    .category-container {
+        padding: 0.2rem;
     }
     .topside-wrapper {
         border-radius: 30px 30px 30px 30px;
