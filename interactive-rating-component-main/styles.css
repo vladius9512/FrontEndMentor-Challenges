@@ -3,3 +3,30 @@
     padding: 0;
     font-family: "Overpass", sans-serif;
 }
+
+body {
+    min-height: 100vh;
+    background: hsl(216, 12%, 8%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+main {
+    background: hsl(213, 19%, 18%);
+    padding: 1.5rem;
+}
+
+.feedback-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.active {
+    background: hsl(25, 97%, 53%);
+}
