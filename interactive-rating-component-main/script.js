@@ -47,7 +47,7 @@ function initializeSite() {
     const btnDiv = createElem("div", "button-container");
     const btnSubmit = createElem("button", "submit");
 
-    btnSubmit.innerText = "Submit";
+    btnSubmit.innerText = "SUBMIT";
     btnSubmit.addEventListener("click", () => {
         if (!chosenRating) {
             return;
