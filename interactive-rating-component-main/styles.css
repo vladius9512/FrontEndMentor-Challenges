@@ -46,7 +46,7 @@ main {
     width: 18rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     border-radius: 1rem;
     color: var(--lightGrey);
 }
@@ -127,4 +127,28 @@ h1 {
 .submit:hover {
     background: var(--white);
     color: var(--orange);
+}
+
+.container-submited {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.customer-rating {
+    color: var(--orange);
+    background-color: var(--darkBlueA);
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+    font-size: 14px;
+}
+
+h2 {
+    color: var(--white);
+}
+
+.call-to-action {
+    text-align: center;
 }

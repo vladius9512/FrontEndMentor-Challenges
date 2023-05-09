@@ -61,6 +61,7 @@ function initializeSite() {
 }
 
 function submitedView(starRating) {
+    const containerDiv = createElem("div", "container-submited");
     const thanksDiv = createElem("div", "thank-you");
     const thanksImg = createElem(
         "img",
@@ -77,7 +78,8 @@ function submitedView(starRating) {
         "We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!";
     callDiv.appendChild(pElem);
     thanksDiv.appendChild(thanksImg);
-    mainElem.append(thanksDiv, customerRatingDiv, h2, callDiv);
+    containerDiv.append(thanksDiv, customerRatingDiv, h2, callDiv);
+    mainElem.appendChild(containerDiv);
 }
 
 initializeSite();
