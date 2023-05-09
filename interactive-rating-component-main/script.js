@@ -16,6 +16,7 @@ function createElem(elemType, className, src) {
 function initializeSite() {
     const starDiv = createElem("div", "rating-star");
     const starImg = createElem("img", "imageStar", "./images/icon-star.svg");
+    starImg.alt = "orange-star";
     const h1 = createElem("h1");
     h1.innerText = "How did we do?";
     const pElem = createElem("p");
@@ -68,6 +69,7 @@ function submitedView(starRating) {
         "thank-you-image",
         "./images/illustration-thank-you.svg"
     );
+    thanksImg.alt = "phone-text";
     const customerRatingDiv = createElem("div", "customer-rating");
     customerRatingDiv.innerText = `You selected ${starRating} out of 5`;
     const h2 = createElem("h2");

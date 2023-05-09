@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: (https://github.com/vladius9512/FrontEndMentor-Challenges/tree/main/interactive-rating-component-main)
--   Live Site URL: (https://your-live-site-url.com)
+-   Live Site URL: (https://vladius9512.github.io/FrontEndMentor-Challenges/interactive-rating-component-main/rating.html)
 
 ## My process
 
