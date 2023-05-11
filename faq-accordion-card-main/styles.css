@@ -21,24 +21,29 @@ body {
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 400;
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
     width: 330px;
+    min-height: 550px;
     border-radius: 1.5rem;
     position: relative;
     margin-bottom: 20%;
+    box-shadow: 0px 20px 50px 0px #00000070;
+    background: #fff;
 }
 
 .content-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
-    background: #fff;
-    border-radius: 1.5rem;
-    min-height: 530px;
+    padding: 1.2rem;
+    padding-bottom: 3.2rem;
     justify-content: center;
 }
 
@@ -55,7 +60,7 @@ main {
 
 .shadow {
     position: absolute;
-    bottom: -20%;
+    bottom: -15%;
     left: 0;
 }
 
@@ -63,6 +68,13 @@ h1 {
     text-align: center;
     font-weight: bolder;
     font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.question-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .line {
@@ -72,12 +84,23 @@ h1 {
 
 .answer {
     display: none;
+    color: var(--Dark-grayish-blue);
 }
 
 .question {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    color: var(--Very-dark-grayish-blue);
+}
+
+.question.active {
+    color: var(--very-dark-desaturated-blue);
+    font-weight: 700;
+}
+
+.question.active img {
+    transform: scaleY(-1);
 }
 
 footer {
