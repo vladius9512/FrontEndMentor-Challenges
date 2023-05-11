@@ -49,16 +49,27 @@ main {
     width: 240px;
     top: -110px;
     left: 45px;
+    height: 180px;
 }
 
 .online {
     position: relative;
+    background-image: url("./images/illustration-woman-online-mobile.svg");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
 }
 
 .shadow {
     position: absolute;
-    bottom: -15%;
+    background-image: url("./images/bg-pattern-mobile.svg");
+    background-size: contain;
+    bottom: -110px;
     left: 0;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
 }
 
 h1 {
@@ -104,4 +115,65 @@ h1 {
 footer {
     position: absolute;
     bottom: 0;
+}
+
+@media screen and (min-width: 720px) {
+    main {
+        width: 920px;
+        flex-direction: row;
+        padding-top: 0;
+    }
+    .images-wrapper {
+        width: 50%;
+        height: 100%;
+        position: relative;
+    }
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: unset;
+        left: unset;
+        overflow: hidden;
+    }
+    .content-container {
+        flex: 1;
+        margin: 3rem 0;
+        margin-right: 4rem;
+    }
+    .arrow {
+        margin-right: 1rem;
+    }
+    h1 {
+        text-align: left;
+    }
+    .question:hover {
+        color: var(--soft-red);
+    }
+    .online {
+        position: absolute;
+        left: -80px;
+        top: 80px;
+        background-image: url("./images/illustration-woman-online-desktop.svg");
+        width: 500px;
+        height: 360px;
+        z-index: 1;
+    }
+    .shadow {
+        left: -305px;
+        bottom: -20px;
+        transform: scale(2);
+        background-image: url("./images/bg-pattern-desktop.svg");
+    }
+    .box {
+        position: absolute;
+        width: 180px;
+        height: 210px;
+        background-image: url("./images/illustration-box-desktop.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 1;
+        left: -140px;
+        top: 210px;
+    }
 }
