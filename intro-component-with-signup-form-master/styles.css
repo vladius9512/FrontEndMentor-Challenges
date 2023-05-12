@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+
+    --blue: hsl(248, 32%, 49%);
+
+    --darkBlue: hsl(249, 10%, 26%);
+    --grayishBlue: hsl(246, 25%, 77%);
+}
+
+.input {
+    display: block;
+}
+.input span {
+    position: absolute;
+    z-index: 1;
+    cursor: text;
+    pointer-events: none;
+    color: #999;
+    /* Input padding + input border */
+    padding: 7px;
+    /* Firefox does not respond well to different line heights. Use padding instead. */
+    line-height: 17px;
+    /* This gives a little gap between the cursor and the label */
+    margin-left: 2px;
+}
+
+.input input {
+    z-index: 0;
+    padding: 6px;
+    margin: 0;
+    font: inherit;
+    line-height: 17px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
