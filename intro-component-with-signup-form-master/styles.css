@@ -14,6 +14,80 @@
     --grayishBlue: hsl(246, 25%, 77%);
 }
 
+body {
+    height: 100vh;
+    background: url("./images/bg-intro-mobile.png");
+    background-size: cover;
+    background-color: var(--red);
+    color: #fff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+    text-align: center;
+    font-size: 16px;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+h1 {
+    margin-top: 2rem;
+}
+
+.button-container {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.signup {
+    padding: 1rem;
+    width: 100%;
+    border-style: none;
+    background-color: var(--blue);
+    box-shadow: 0px 7px 0px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.signup span {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+form {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    height: 500px;
+    justify-content: space-around;
+    box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+form p {
+    text-align: center;
+    font-size: 11px;
+    color: var(--grayishBlue);
+    padding: 0 2rem;
+}
+
+form a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--red);
+}
 .input {
     display: block;
 }
@@ -22,9 +96,11 @@
     z-index: 1;
     cursor: text;
     pointer-events: none;
-    color: #999;
+    color: #5e5d62;
+    font-size: 14px;
+    font-weight: 600;
     /* Input padding + input border */
-    padding: 7px;
+    padding: 13px;
     /* Firefox does not respond well to different line heights. Use padding instead. */
     line-height: 17px;
     /* This gives a little gap between the cursor and the label */
@@ -33,14 +109,34 @@
 
 .input input {
     z-index: 0;
-    padding: 6px;
-    margin: 0;
+    padding: 0.5rem;
     font: inherit;
     line-height: 17px;
+    width: 250px;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    border-color: rgba(128, 128, 128, 0.2);
+}
+
+#submit {
+    padding: 1rem;
+    width: 268px;
+    background-color: var(--green);
+    border-style: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: inset -1px -3px 2px rgba(0, 0, 0, 0.2);
 }
 
 .error {
     display: none;
+    color: var(--red);
+    font-size: 12px;
+    text-align: right;
+    padding-right: 16px;
+    font-style: italic;
+    margin-top: -15px;
 }
 
 .attribution {

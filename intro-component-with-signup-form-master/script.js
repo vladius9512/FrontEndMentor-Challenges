@@ -29,7 +29,7 @@ inputs.forEach((input) => {
                 input.style.borderColor = "";
             } else {
                 span.hidden = false;
-                input.style.borderColor = "red";
+                input.style.borderColor = "var(--red)";
             }
         }, 10);
     });
