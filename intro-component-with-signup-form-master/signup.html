@@ -19,25 +19,72 @@
                 developers think is invaluable.
             </p>
             <div class="button-container">
-                <button>Try it free 7 days then $20/mo. thereafter</button>
+                <button>
+                    <p class="bold">Try it free 7 days</p>
+                    <p>then $20/mo. thereafter</p>
+                </button>
             </div>
             <form action="submit">
-                <label class="input">
+                <label class="input" for="firstName">
                     <span>First Name</span>
-                    <input type="text" id="firstName" />
+                    <input
+                        type="text"
+                        id="firstName"
+                        required
+                        aria-describedby="firstName-validation"
+                    />
                 </label>
-                <label class="input">
+                <span
+                    class="error name"
+                    id="firstName-validation"
+                    aria-live="assertive"
+                    >First name can't be empty</span
+                >
+                <label class="input" for="lastName">
                     <span>Last Name</span>
-                    <input type="text" id="lastName" />
+                    <input
+                        type="text"
+                        id="lastName"
+                        required
+                        aria-describedby="lastName-validation"
+                    />
                 </label>
-                <label class="input">
+                <span
+                    class="error name"
+                    id="lastName-validation"
+                    aria-live="assertive"
+                    >Last name can't be empty</span
+                >
+                <label class="input" for="email">
                     <span>Email</span>
-                    <input type="email" id="email" />
+                    <input
+                        type="email"
+                        id="email"
+                        required
+                        aria-describedby="email-validation"
+                    />
                 </label>
-                <label class="input">
+                <span
+                    class="error email"
+                    id="email-validation"
+                    aria-live="assertive"
+                    >Enter a valid email address</span
+                >
+                <label class="input" for="password">
                     <span>Password</span>
-                    <input type="password" id="password" />
+                    <input
+                        type="password"
+                        id="password"
+                        required
+                        aria-describedby="password-validation"
+                    />
                 </label>
+                <span
+                    class="error password"
+                    id="password-validation"
+                    aria-live="assertive"
+                    >Password can't be empty</span
+                >
                 <button type="submit" id="submit">Claim your free trial</button>
                 <p>
                     By clicking the button, you are agreeing to our

@@ -39,6 +39,10 @@
     line-height: 17px;
 }
 
+.error {
+    display: none;
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
