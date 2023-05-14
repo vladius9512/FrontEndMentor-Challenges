@@ -36,13 +36,13 @@ main {
 }
 
 h1 {
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 
 .button-container {
     margin-top: 2rem;
     margin-bottom: 0.5rem;
-    width: 100%;
+    width: 311px;
 }
 
 .signup {
@@ -66,14 +66,15 @@ h1 {
 }
 
 form {
-    width: 100%;
+    width: 311px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     border-radius: 0.5rem;
-    height: 500px;
+    height: 360px;
     justify-content: space-around;
     box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
 }
 
 form p {
@@ -145,4 +146,63 @@ form a {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 1080px) {
+    body {
+        background: url("./images/bg-intro-desktop.png");
+        background-color: var(--red);
+    }
+    main {
+        flex-direction: row;
+        margin-top: 0;
+    }
+    .text-wrapper {
+        width: 30%;
+        text-align: left;
+        padding-left: 5rem;
+    }
+    .button-form-wrapper {
+        min-width: 50%;
+    }
+    form {
+        width: 540px;
+        height: 565px;
+        margin-top: 1.5rem;
+    }
+    .button-container {
+        width: 540px;
+    }
+    .input input {
+        width: 460px;
+        padding: 1rem;
+    }
+    .error {
+        padding-right: 28px;
+        margin-top: -40px;
+    }
+    .input span {
+        padding: 21px;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    #submit {
+        width: 494px;
+    }
+    #submit:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    form p {
+        margin-top: -2rem;
+        margin-bottom: 1rem;
+    }
+    .signup {
+        display: flex;
+        justify-content: center;
+    }
+    .signup span {
+        margin-right: 3px;
+    }
 }

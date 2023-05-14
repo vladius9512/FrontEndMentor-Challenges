@@ -36,11 +36,14 @@ inputs.forEach((input) => {
 });
 
 inputs.forEach((input) => {
+    const errorIcon = input.nextElementSibling;
+    errorIcon.hidden = true;
     input.addEventListener(
         "blur",
         (e) => {
             const isValid = e.target.validity.valid;
             const message = e.target.validationMessage;
+            console.log(errorIcon);
             const connectedValidationId =
                 e.target.getAttribute("aria-describedby");
             const connectedValidation = connectedValidationId
@@ -49,8 +52,10 @@ inputs.forEach((input) => {
 
             if (connectedValidation && message && !isValid) {
                 connectedValidation.style.display = "block";
+                errorIcon.hidden = false;
             } else {
                 connectedValidation.style.display = "none";
+                errorIcon.hidden = true;
             }
         },
         true

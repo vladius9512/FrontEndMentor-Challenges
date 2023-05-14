@@ -12,92 +12,100 @@
     </head>
     <body>
         <main>
-            <h1>Learn to code by watching others</h1>
-            <p>
-                See how experienced developers solve problems in real-time.
-                Watching scripted tutorials is great, but understanding how
-                developers think is invaluable.
-            </p>
-            <div class="button-container">
-                <button class="signup">
-                    <span>
-                        <p class="bold">Try it free 7 days</p>
-                        <p>then</p>
-                    </span>
-                    <p>$20/mo. thereafter</p>
-                </button>
+            <div class="text-wrapper">
+                <h1>Learn to code by watching others</h1>
+                <p>
+                    See how experienced developers solve problems in real-time.
+                    Watching scripted tutorials is great, but understanding how
+                    developers think is invaluable.
+                </p>
             </div>
-            <form action="submit">
-                <label class="input" for="firstName">
-                    <span>First Name</span>
-                    <input
-                        type="text"
-                        id="firstName"
-                        required
-                        aria-describedby="firstName-validation"
-                    />
-                </label>
-                <span
-                    class="error name"
-                    id="firstName-validation"
-                    aria-live="assertive"
-                    >First name can't be empty</span
-                >
-                <label class="input" for="lastName">
-                    <span>Last Name</span>
-                    <input
-                        type="text"
-                        id="lastName"
-                        required
-                        aria-describedby="lastName-validation"
-                    />
-                </label>
-                <span
-                    class="error name"
-                    id="lastName-validation"
-                    aria-live="assertive"
-                    >Last name can't be empty</span
-                >
-                <label class="input" for="email">
-                    <span>Email</span>
-                    <input
-                        type="email"
-                        id="email"
-                        required
-                        aria-describedby="email-validation"
-                    />
-                </label>
-                <span
-                    class="error email"
-                    id="email-validation"
-                    aria-live="assertive"
-                    >Enter a valid email address</span
-                >
-                <label class="input" for="password">
-                    <span>Password</span>
-                    <input
-                        type="password"
-                        id="password"
-                        required
-                        aria-describedby="password-validation"
-                    />
-                </label>
-                <span
-                    class="error password"
-                    id="password-validation"
-                    aria-live="assertive"
-                    >Password can't be empty</span
-                >
-                <div class="submit-container">
-                    <button type="submit" id="submit">
-                        CLAIM YOUR FREE TRIAL
+            <div class="button-form-wrapper">
+                <div class="button-container">
+                    <button class="signup">
+                        <span>
+                            <p class="bold">Try it free 7 days</p>
+                            <p>then</p>
+                        </span>
+                        <p>$20/mo. thereafter</p>
                     </button>
                 </div>
-                <p>
-                    By clicking the button, you are agreeing to our
-                    <a href="terms" target="_blank">Terms and Services</a>
-                </p>
-            </form>
+                <form action="submit">
+                    <label class="input" for="firstName">
+                        <span>First Name</span>
+                        <input
+                            type="text"
+                            id="firstName"
+                            required
+                            aria-describedby="firstName-validation"
+                        />
+                        <img src="./images/icon-error.svg" alt="error-icon" />
+                    </label>
+                    <span
+                        class="error name"
+                        id="firstName-validation"
+                        aria-live="assertive"
+                        >First name can't be empty</span
+                    >
+                    <label class="input" for="lastName">
+                        <span>Last Name</span>
+                        <input
+                            type="text"
+                            id="lastName"
+                            required
+                            aria-describedby="lastName-validation"
+                        />
+                        <img src="./images/icon-error.svg" alt="error-icon" />
+                    </label>
+                    <span
+                        class="error name"
+                        id="lastName-validation"
+                        aria-live="assertive"
+                        >Last name can't be empty</span
+                    >
+                    <label class="input" for="email">
+                        <span>Email</span>
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                            aria-describedby="email-validation"
+                        />
+                        <img src="./images/icon-error.svg" alt="error-icon" />
+                    </label>
+                    <span
+                        class="error email"
+                        id="email-validation"
+                        aria-live="assertive"
+                        >Enter a valid email address</span
+                    >
+                    <label class="input" for="password">
+                        <span>Password</span>
+                        <input
+                            type="password"
+                            id="password"
+                            required
+                            aria-describedby="password-validation"
+                        />
+                        <img src="./images/icon-error.svg" alt="error-icon" />
+                    </label>
+                    <span
+                        class="error password"
+                        id="password-validation"
+                        aria-live="assertive"
+                        >Password can't be empty</span
+                    >
+                    <div class="submit-container">
+                        <button type="submit" id="submit">
+                            CLAIM YOUR FREE TRIAL
+                        </button>
+                    </div>
+                    <p>
+                        By clicking the button, you are agreeing to our
+                        <a href="terms" target="_blank">Terms and Services</a>
+                    </p>
+                </form>
+            </div>
         </main>
 
         <footer>
