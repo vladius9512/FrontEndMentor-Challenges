@@ -43,7 +43,6 @@ inputs.forEach((input) => {
         (e) => {
             const isValid = e.target.validity.valid;
             const message = e.target.validationMessage;
-            console.log(errorIcon);
             const connectedValidationId =
                 e.target.getAttribute("aria-describedby");
             const connectedValidation = connectedValidationId

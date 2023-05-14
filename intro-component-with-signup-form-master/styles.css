@@ -107,6 +107,13 @@ form a {
     /* This gives a little gap between the cursor and the label */
     margin-left: 2px;
 }
+.input img {
+    position: absolute;
+    z-index: 1;
+    margin-left: -35px;
+    margin-top: 9px;
+    pointer-events: none;
+}
 
 .input input {
     z-index: 0;
@@ -137,7 +144,7 @@ form a {
     text-align: right;
     padding-right: 16px;
     font-style: italic;
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
 .attribution {
@@ -177,6 +184,9 @@ form a {
         width: 460px;
         padding: 1rem;
     }
+    .input img {
+        margin-top: 18px;
+    }
     .error {
         padding-right: 28px;
         margin-top: -40px;
@@ -204,5 +214,9 @@ form a {
     }
     .signup span {
         margin-right: 3px;
+    }
+    .signup:hover {
+        opacity: 0.9;
+        cursor: pointer;
     }
 }
