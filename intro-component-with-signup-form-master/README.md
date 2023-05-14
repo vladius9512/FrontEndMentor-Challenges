@@ -37,8 +37,8 @@ Desktop view with active states
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://github.com/vladius9512/FrontEndMentor-Challenges/tree/main/intro-component-with-signup-form-master)
--   Live Site URL: [Add live site URL here]()
+-   Solution URL: [Solution URL](https://github.com/vladius9512/FrontEndMentor-Challenges/tree/main/intro-component-with-signup-form-master)
+-   Live Site URL: [Live preview](https://vladius9512.github.io/FrontEndMentor-Challenges/intro-component-with-signup-form-master/signup.html)
 
 ## My process
 
