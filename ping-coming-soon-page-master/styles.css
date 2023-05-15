@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Libre Franklin", sans-serif;
+}
+
+:root {
+    --blue: hsl(223, 87%, 63%);
+    --paleblue: hsl(223, 100%, 88%);
+    --lightRed: hsl(354, 100%, 66%);
+    --gray: hsl(0, 0%, 59%);
+    --veryDarkBlue: hsl(209, 33%, 12%);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
