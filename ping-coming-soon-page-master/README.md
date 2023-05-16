@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: [solution link](https://github.com/vladius9512/FrontEndMentor-Challenges/tree/main/ping-coming-soon-page-master)
--   Live Site URL: [Live demo](https://your-live-site-url.com)
+-   Live Site URL: [Live demo](https://vladius9512.github.io/FrontEndMentor-Challenges/ping-coming-soon-page-master/notify.html)
 
 ## My process
 
