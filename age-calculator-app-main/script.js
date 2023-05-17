@@ -2,6 +2,7 @@ const day = document.getElementById("day");
 const month = document.getElementById("month");
 const year = document.getElementById("year");
 const inputs = document.getElementsByTagName("input");
+const outputDivs = document.getElementsByClassName("age");
 const imageButton = document.getElementById("image-container");
 
 document.addEventListener("wheel", () => {
@@ -16,7 +17,6 @@ for (let input of inputs) {
         if (input.id === "year") {
             max = 9999;
         }
-        console.log(max);
         const typed = +e.key;
         const regex = /[^0-9.]/g;
         if (!isNaN(typed)) e.preventDefault();
@@ -34,8 +34,50 @@ for (let input of inputs) {
 }
 
 imageButton.addEventListener("click", () => {
-    let dayValue = day.value;
-    let monthValue = month.value;
-    let yearValue = year.value;
-    console.log(dayValue, monthValue, yearValue);
+    const dayValue = day.value;
+    const monthValue = month.value;
+    const yearValue = year.value;
+    let inputDate = `${yearValue}-${monthValue}-${dayValue}`;
+    if (isNaN(validDate(inputDate))) {
+        alert("invalid date");
+        return;
+    }
+    const age = calculateAge(dayValue, monthValue, yearValue);
+    updateAge(age.year, age.month, age.day);
 });
+
+function validDate(inputDate) {
+    return Date.parse(inputDate);
+}
+
+function calculateAge(inputDay, inputMonth, inputYear) {
+    const date = new Date();
+    const currentDay = date.getDate();
+    const currentMonth = date.getMonth();
+    const currentYear = date.getFullYear();
+    let yearAge = currentYear - inputYear;
+    let monthAge, dayAge;
+    if (currentMonth >= inputMonth) {
+        monthAge = currentMonth - inputMonth;
+    } else {
+        yearAge--;
+        monthAge = 12 + currentMonth - inputMonth;
+    }
+    if (currentDay >= inputDay) {
+        dayAge = currentDay - inputDay;
+    } else {
+        monthAge--;
+        dayAge = 31 + currentDay - inputDay;
+    }
+    if (monthAge < 0) {
+        monthAge = 11;
+        yearAge--;
+    }
+    return { year: yearAge, month: monthAge, day: dayAge };
+}
+
+function updateAge(years, months, days) {
+    outputDivs[0].innerHTML = years;
+    outputDivs[1].innerHTML = months;
+    outputDivs[2].innerHTML = days;
+}
