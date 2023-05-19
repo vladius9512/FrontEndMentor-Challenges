@@ -126,3 +126,36 @@ footer {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+@media screen and (min-width: 720px) {
+    main {
+        width: 600px;
+        padding: 3rem;
+        border-radius: 2rem 2rem 12rem 2rem;
+        gap: 2rem;
+    }
+    .inputs-wrapper {
+        justify-content: left;
+        gap: 2rem;
+    }
+    input {
+        width: 120px;
+    }
+    .error {
+        font-style: italic;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    #image-container {
+        left: 87%;
+        width: 80px;
+        height: 80px;
+        top: -40px;
+    }
+    .arrow {
+        width: 35px;
+    }
+    .output-container {
+        font-size: 4.5rem;
+    }
+}
