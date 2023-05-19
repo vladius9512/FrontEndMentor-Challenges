@@ -12,9 +12,7 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
     -   [Built with](#built-with)
     -   [What I learned](#what-i-learned)
     -   [Continued development](#continued-development)
-    -   [Useful resources](#useful-resources)
 -   [Author](#author)
--   [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -47,7 +45,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: [Solution URL](https://github.com/vladius9512/FrontEndMentor-Challenges/tree/main/age-calculator-app-main)
--   Live Site URL: [Live Demo](https://your-live-site-url.com)
+-   Live Site URL: [Live Demo](hhttps://vladius9512.github.io/FrontEndMentor-Challenges/age-calculator-app-main/age.html)
 
 ## My process
 
