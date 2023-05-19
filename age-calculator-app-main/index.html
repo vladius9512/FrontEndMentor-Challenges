@@ -15,15 +15,52 @@
             <div class="inputs-wrapper">
                 <div class="input-container">
                     <label for="day">DAY</label>
-                    <input type="number" id="day" min="1" max="31" required />
+                    <input
+                        type="number"
+                        id="day"
+                        min="1"
+                        max="31"
+                        required
+                        placeholder="DD"
+                        aria-describedby="day-validation"
+                    />
+                    <span
+                        class="error"
+                        id="day-validation"
+                        aria-live="assertive"
+                    ></span>
                 </div>
                 <div class="input-container">
                     <label for="month">MONTH</label>
-                    <input type="number" id="month" min="1" max="12" required />
+                    <input
+                        type="number"
+                        id="month"
+                        min="1"
+                        max="12"
+                        required
+                        placeholder="MM"
+                        aria-describedby="month-validation"
+                    />
+                    <span
+                        class="error"
+                        id="month-validation"
+                        aria-live="assertive"
+                    ></span>
                 </div>
                 <div class="input-container">
                     <label for="year">YEAR</label>
-                    <input type="number" id="year" required />
+                    <input
+                        type="number"
+                        id="year"
+                        required
+                        placeholder="YYYY"
+                        aria-describedby="year-validation"
+                    />
+                    <span
+                        class="error"
+                        id="year-validation"
+                        aria-live="assertive"
+                    ></span>
                 </div>
             </div>
             <div class="line">

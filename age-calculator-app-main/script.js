@@ -14,6 +14,12 @@ document.addEventListener("wheel", () => {
 for (let input of inputs) {
     input.addEventListener("keydown", (e) => {
         let max = +input.getAttribute("max");
+        const inputElem = e.target;
+        const connectedValidationId =
+            inputElem.getAttribute("aria-describedby");
+        const connectedValidation = document.getElementById(
+            connectedValidationId
+        );
         if (input.id === "year") {
             max = 9999;
         }
@@ -22,8 +28,10 @@ for (let input of inputs) {
         if (!isNaN(typed)) e.preventDefault();
         if (e.target.value + typed <= max) {
             input.value += typed;
+            connectedValidation.style.display = "none";
         } else {
-            console.log(`Number too big! Max is ${max}`);
+            connectedValidation.style.display = "block";
+            connectedValidation.innerText = "Must be a valid date";
         }
         if (e.keyCode === 8 || !regex.test(typed)) {
             return e;
@@ -37,9 +45,26 @@ imageButton.addEventListener("click", () => {
     const dayValue = day.value;
     const monthValue = month.value;
     const yearValue = year.value;
+    if (dayValue === "") {
+        const dayAriaId = day.getAttribute("aria-describedby");
+        const ariaSpan = document.getElementById(dayAriaId);
+        ariaSpan.style.display = "block";
+        ariaSpan.innerText = "Field is required";
+    }
+    if (monthValue === "") {
+        const monthAriaId = month.getAttribute("aria-describedby");
+        const ariaSpan = document.getElementById(monthAriaId);
+        ariaSpan.style.display = "block";
+        ariaSpan.innerText = "Field is required";
+    }
+    if (yearValue === "") {
+        const yearAriaId = year.getAttribute("aria-describedby");
+        const ariaSpan = document.getElementById(yearAriaId);
+        ariaSpan.style.display = "block";
+        ariaSpan.innerText = "Field is required";
+    }
     let inputDate = `${yearValue}-${monthValue}-${dayValue}`;
     if (isNaN(validDate(inputDate))) {
-        alert("invalid date");
         return;
     }
     const age = calculateAge(dayValue, monthValue, yearValue);
