@@ -39,7 +39,7 @@ main {
     gap: 4rem;
     width: 310px;
     background-color: var(--white);
-    padding: 1rem;
+    padding: 3rem 1rem;
     border-radius: 1rem 1rem 5rem 1rem;
 }
 
@@ -52,6 +52,7 @@ main {
     display: flex;
     flex-direction: column;
     color: var(--smokeyGrey);
+    font-size: 15px;
 }
 
 input {
@@ -60,6 +61,14 @@ input {
     padding: 0.7rem;
     color: var(--offBlack);
     border: 1px solid var(--lightGrey);
+}
+
+.input-container.err {
+    color: var(--lightRed);
+}
+
+.input-container.err input {
+    border: 1px solid var(--lightRed);
 }
 
 input::placeholder {
@@ -85,15 +94,21 @@ input::placeholder {
     left: 41%;
 }
 
+.error {
+    color: var(--lightRed);
+    font-size: 10px;
+}
+
 .arrow {
     width: 25px;
 }
 
 .output-container {
     display: flex;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
     font-style: italic;
+    gap: 0.4rem;
 }
 
 .age {

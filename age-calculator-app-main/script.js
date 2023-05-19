@@ -14,6 +14,8 @@ document.addEventListener("wheel", () => {
 for (let input of inputs) {
     input.addEventListener("keydown", (e) => {
         let max = +input.getAttribute("max");
+        const inputDiv = input.parentNode;
+        console.log(inputDiv);
         const inputElem = e.target;
         const connectedValidationId =
             inputElem.getAttribute("aria-describedby");
@@ -29,7 +31,9 @@ for (let input of inputs) {
         if (e.target.value + typed <= max) {
             input.value += typed;
             connectedValidation.style.display = "none";
+            inputDiv.classList.remove("err");
         } else {
+            inputDiv.classList.add("err");
             connectedValidation.style.display = "block";
             connectedValidation.innerText = "Must be a valid date";
         }
@@ -48,18 +52,25 @@ imageButton.addEventListener("click", () => {
     if (dayValue === "") {
         const dayAriaId = day.getAttribute("aria-describedby");
         const ariaSpan = document.getElementById(dayAriaId);
+        const inputDiv = ariaSpan.parentNode;
+        inputDiv.classList.add("err");
+        console.log(inputDiv);
         ariaSpan.style.display = "block";
         ariaSpan.innerText = "Field is required";
     }
     if (monthValue === "") {
         const monthAriaId = month.getAttribute("aria-describedby");
         const ariaSpan = document.getElementById(monthAriaId);
+        const inputDiv = ariaSpan.parentNode;
+        inputDiv.classList.add("err");
         ariaSpan.style.display = "block";
         ariaSpan.innerText = "Field is required";
     }
     if (yearValue === "") {
         const yearAriaId = year.getAttribute("aria-describedby");
         const ariaSpan = document.getElementById(yearAriaId);
+        const inputDiv = ariaSpan.parentNode;
+        inputDiv.classList.add("err");
         ariaSpan.style.display = "block";
         ariaSpan.innerText = "Field is required";
     }
