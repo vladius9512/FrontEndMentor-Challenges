@@ -16,22 +16,94 @@
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield; /* Firefox */
+    -moz-appearance: textfield;
+    font-size: 32px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--offWhite);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 310px;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 1rem 1rem 5rem 1rem;
+}
+
+.inputs-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    color: var(--smokeyGrey);
+}
+
+input {
+    width: 70px;
+    border-radius: 0.5rem;
+    padding: 0.7rem;
+    color: var(--offBlack);
+    border: 1px solid var(--lightGrey);
+}
+
+input::placeholder {
+    font-size: 20px;
+}
+
+.line {
+    height: 1px;
+    background-color: var(--lightGrey);
+    position: relative;
 }
 
 #image-container {
-    width: 40px;
-    height: 40px;
-    background-color: var(--offBlack);
+    width: 60px;
+    height: 60px;
+    background-color: var(--purple);
     border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -30px;
+    left: 41%;
 }
 
+.arrow {
+    width: 25px;
+}
+
+.output-container {
+    display: flex;
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.age {
+    color: var(--purple);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
 .attribution {
     font-size: 11px;
     text-align: center;
