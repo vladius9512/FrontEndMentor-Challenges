@@ -113,6 +113,11 @@ input::placeholder {
 
 .age {
     color: var(--purple);
+    transition: all 0.2s ease-in-out;
+}
+
+.age.shown {
+    transform: rotate(360deg);
 }
 
 footer {
@@ -151,6 +156,10 @@ footer {
         width: 80px;
         height: 80px;
         top: -40px;
+    }
+    #image-container:hover {
+        background-color: var(--offBlack);
+        cursor: pointer;
     }
     .arrow {
         width: 35px;

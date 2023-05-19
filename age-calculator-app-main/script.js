@@ -80,6 +80,7 @@ imageButton.addEventListener("click", () => {
     }
     const age = calculateAge(dayValue, monthValue, yearValue);
     updateAge(age.year, age.month, age.day);
+    setTimeout(removeClass, 1000);
 });
 
 function validDate(inputDate) {
@@ -113,7 +114,16 @@ function calculateAge(inputDay, inputMonth, inputYear) {
 }
 
 function updateAge(years, months, days) {
+    outputDivs[0].classList.add("shown");
     outputDivs[0].innerHTML = years;
+    outputDivs[1].classList.add("shown");
     outputDivs[1].innerHTML = months;
+    outputDivs[2].classList.add("shown");
     outputDivs[2].innerHTML = days;
+}
+
+function removeClass() {
+    outputDivs[0].classList.remove("shown");
+    outputDivs[1].classList.remove("shown");
+    outputDivs[2].classList.remove("shown");
 }
