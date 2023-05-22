@@ -176,7 +176,7 @@ footer a {
     color: hsl(228, 45%, 44%);
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1280px) {
     body {
         padding: 2rem 10rem;
         background: var(--off-white);
