@@ -16,6 +16,7 @@
 body {
     padding: 1rem;
     overflow: hidden scroll;
+    font-size: 15px;
 }
 
 nav {
@@ -23,6 +24,7 @@ nav {
     position: relative;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .buttons-container {
@@ -32,16 +34,24 @@ nav {
     right: -10%;
     top: -16px;
     z-index: 1;
-    padding-top: 4rem;
-    gap: 1rem;
+    padding-top: 8rem;
+    gap: 1.5rem;
     height: 100vh;
     width: 270px;
     background-color: var(--off-white);
     padding-left: 1rem;
 }
 
+.buttons-container a {
+    text-decoration: none;
+    color: var(--very-dark-blue);
+    font-weight: 400;
+    width: 100px;
+    font-size: 18px;
+}
+
 .buttons-container.closed {
-    right: -100%;
+    display: none;
 }
 
 .close-button-container {
@@ -60,6 +70,7 @@ nav {
     background-color: rgba(0, 0, 0, 0.6);
     display: none;
     top: 0;
+    left: -16px;
 }
 
 .overlay.active {
@@ -70,10 +81,97 @@ nav {
     width: 100%;
 }
 
-.attribution {
+.head-image-container {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: var(--very-dark-blue);
+    font-size: 2.6rem;
+}
+
+.head-article-container p {
+    color: var(--dark-grayish-blue);
+    margin-bottom: 1rem;
+}
+
+.head-article-container button {
+    padding: 0.8rem;
+    width: 200px;
+    border-style: none;
+    color: var(--off-white);
+    font-size: 15px;
+    font-weight: 700;
+    background-color: var(--soft-red);
+}
+
+.head-article-container {
+    margin-bottom: 3rem;
+}
+
+.new-articles-container {
+    background-color: var(--very-dark-blue);
+    color: var(--dark-grayish-blue);
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+h2 {
+    color: var(--soft-orange);
+    margin-bottom: 1.5rem;
+}
+
+.new-article-summary-container h3 {
+    color: var(--off-white);
+    margin-bottom: 0.7rem;
+}
+
+.line {
+    margin: 1.5rem 0;
+    border: solid 1px var(--dark-grayish-blue);
+}
+
+.article-container {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.top-article-image-container {
+    grid-column: 1;
+}
+
+.top-article-image-container img {
+    width: 100%;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.text-container h3 {
+    font-size: 2rem;
+    color: var(--grayish-blue);
+}
+
+.text-container h4 {
+    font-size: 1rem;
+}
+
+.text-container h5 {
+    color: var(--grayish-blue);
+    font-size: 15px;
+}
+
+footer {
     font-size: 11px;
     text-align: center;
+    position: absolute;
 }
-.attribution a {
+footer a {
     color: hsl(228, 45%, 44%);
 }
