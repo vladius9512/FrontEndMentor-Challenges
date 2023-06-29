@@ -20,9 +20,15 @@
             <h2>Sign-up for our 30-day trial. No credit card required.</h2>
         </header>
         <main>
-            <div class="pageviews">Pageviews</div>
+            <div class="pageviews-container">
+                <div class="pageviews">500k</div>
+                <p>Pageviews</p>
+            </div>
             <div class="slider"></div>
-            <div class="price/month">$ /month</div>
+            <div class="price/month">
+                <div class="price">$24.00</div>
+                <div class="month">/month</div>
+            </div>
             <div class="range-container">
                 <input
                     type="range"
@@ -31,17 +37,10 @@
                     min="8"
                     max="36"
                 />
-                <datalist id="values">
-                    <option value="8"></option>
-                    <option value="12"></option>
-                    <option value="16"></option>
-                    <option value="24"></option>
-                    <option value="36"></option>
-                </datalist>
             </div>
             <div class="monthly-yearly-container">
                 <p>Monthly Billing</p>
-                <input type="checkbox" />
+                <input type="checkbox" id="yearly" />
                 <p>Yearly Billing</p>
                 <p>25% discount</p>
             </div>
