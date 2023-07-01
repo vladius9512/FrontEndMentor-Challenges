@@ -15,6 +15,120 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: "Manrope", sans-serif;
+    background-image: url("./images/bg-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: 1000px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+header {
+    background-image: url("./images/pattern-circles.svg");
+    background-repeat: no-repeat;
+    height: 150px;
+    background-position: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 21px;
+    margin: 0;
+    color: var(--Dark-Desaturated-Blue);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 15px;
+    margin: 0;
+    max-width: 205px;
+    color: var(--Grayish-Blue);
+}
+
+main p {
+    margin: 0;
+}
+
+main {
+    border: 1px solid var(--White);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--White);
+    box-shadow: 0px 8px 5px 5px var(--Very-Pale-Blue);
+}
+
+.pageviews-container {
+    display: flex;
+    gap: 0.3rem;
+    color: var(--Grayish-Blue);
+}
+
+.price-month {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--Dark-Desaturated-Blue);
+}
+
+.month {
+    color: var(--Grayish-Blue);
+}
+
+.monthly-yearly-container {
+    display: flex;
+    font-size: 12px;
+    color: var(--Grayish-Blue);
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.yearly-discount-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.discount {
+    width: 45px;
+    border-radius: 1rem;
+    background-color: var(--Light-Grayish-Red);
+    color: var(--Light-Red);
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: var(--Light-Grayish-Blue-slider);
+}
+
+.image-message {
+    color: var(--Grayish-Blue);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-message img {
+    height: 9px;
+    width: 9px;
 }
 
 .switch {
@@ -22,6 +136,15 @@ body {
     height: 24px;
     position: relative;
     width: 50px;
+}
+
+.button button {
+    border: none;
+    border-radius: 1.5rem;
+    padding: 0.5rem 3rem;
+    background-color: var(--Dark-Desaturated-Blue);
+    color: var(--Pale-Blue);
+    font-weight: 600;
 }
 
 .switch input {
