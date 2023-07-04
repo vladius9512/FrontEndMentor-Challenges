@@ -205,16 +205,59 @@ main {
 .range-container {
     position: absolute;
     top: 37%;
+    width: 270px;
 }
 
 .range {
     width: 270px;
 }
 
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--Strong-Cyan);
+    background-image: url("./images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 50%;
+    border: none;
+    box-shadow: 0 15px 25px 2px var(--Soft-Cyan);
+}
+
 .range::-moz-range-progress {
     height: 8px;
     border-radius: 8px;
     background-color: var(--Soft-Cyan);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--Light-Grayish-Blue-slider);
 }
 
 .range::-moz-range-track {
@@ -337,5 +380,8 @@ footer {
     .button button:hover {
         color: var(--White);
         cursor: pointer;
+    }
+    .range-container {
+        width: 500px;
     }
 }
