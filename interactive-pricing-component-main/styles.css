@@ -187,7 +187,7 @@ main {
 }
 
 .slider:hover {
-    background-color: var(--Strong-Cyan);
+    background-color: var(--Soft-Cyan);
 }
 
 #yearly:checked + .slider:before {
@@ -248,4 +248,94 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 4rem;
+}
+
+.show-discount {
+    display: none;
+}
+
+@media screen and (min-width: 1080px) {
+    body {
+        height: 100vh;
+        background-size: contain;
+        padding: 0;
+        justify-content: unset;
+        gap: 4rem;
+        align-items: center;
+    }
+    header {
+        margin-top: 3rem;
+    }
+    main {
+        width: 600px;
+    }
+    h2 {
+        max-width: unset;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .pageviews-price-container {
+        flex-direction: row;
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .price {
+        font-size: 36px;
+    }
+    .pageviews-container {
+        font-size: 14px;
+        font-weight: 800;
+    }
+    .month {
+        font-size: 16px;
+    }
+    .range-container {
+        top: 45%;
+    }
+    .range {
+        width: 500px;
+    }
+    .range::-moz-range-thumb {
+        cursor: pointer;
+    }
+    .range::-moz-range-thumb:active {
+        background-color: #24aea1;
+    }
+    .monthly-yearly-container {
+        margin-top: 6rem;
+        gap: 1rem;
+    }
+    .show-discount {
+        display: inline-block;
+        margin-left: 3px;
+    }
+    .discount {
+        width: 85px;
+    }
+    .bonusAndButton-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        margin: 2rem 0;
+    }
+    .bonus-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .image-message {
+        justify-content: unset;
+        margin-bottom: unset;
+    }
+    .button button {
+        margin-bottom: unset;
+    }
+    .button button:hover {
+        color: var(--White);
+        cursor: pointer;
+    }
 }
