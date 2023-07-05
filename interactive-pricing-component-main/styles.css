@@ -59,6 +59,7 @@ main p {
 }
 
 main {
+    position: relative;
     border: 1px solid var(--White);
     border-radius: 0.5rem;
     display: flex;
@@ -204,34 +205,67 @@ main {
 
 .range-container {
     position: absolute;
-    top: 37%;
     width: 270px;
+    top: 80px;
+}
+
+.range-container label {
+    position: absolute;
+    width: 100%;
 }
 
 .range {
     width: 270px;
 }
 
+/* chrome slider */
+
 input[type="range"] {
-    -webkit-appearance: none;
+    font-size: 1.5rem;
     width: 100%;
-    background: transparent;
 }
 
+input[type="range"] {
+    --track-height: 8px;
+    --track-color: var(--Light-Grayish-Blue-slider);
+    --brightness-hover: 180%;
+    --brightness-down: 80%;
+    --clip-edges: 0.125em;
+}
+
+input[type="range"].range {
+    --thumb-height: 40px;
+    --thumb-width: 40px;
+}
+
+input[type="range"].range {
+    color: var(--Strong-Cyan);
+}
+
+/* === range commons === */
+input[type="range"] {
+    position: relative;
+    background: rgba(245, 0, 0, 0);
+    overflow: hidden;
+}
+
+input[type="range"]:active {
+    cursor: grabbing;
+}
+
+input[type="range"]:disabled {
+    filter: grayscale(1);
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* === WebKit specific styles === */
+input[type="range"],
+input[type="range"]::-webkit-slider-runnable-track,
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-}
-
-input[type="range"]:focus {
-    outline: none;
-}
-
-input[type="range"]::-ms-track {
-    width: 100%;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
+    transition: all ease 100ms;
+    height: var(--thumb-height);
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -247,17 +281,72 @@ input[type="range"]::-webkit-slider-thumb {
     box-shadow: 0 15px 25px 2px var(--Soft-Cyan);
 }
 
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+    position: relative;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    --thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
+    --clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
+    --clip-bottom: calc(var(--thumb-height) - var(--clip-top));
+    --clip-further: calc(100% + 1px);
+    --box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
+        100vmax currentColor;
+
+    width: var(--thumb-width, var(--thumb-height));
+    background: linear-gradient(currentColor 0 0) scroll no-repeat left center /
+        50% calc(var(--track-height) + 1px);
+    background-color: currentColor;
+    box-shadow: var(--box-fill);
+    border-radius: var(--thumb-width, var(--thumb-height));
+
+    filter: brightness(100%);
+    clip-path: polygon(
+        100% -1px,
+        var(--clip-edges) -1px,
+        0 var(--clip-top),
+        -100vmax var(--clip-top),
+        -100vmax var(--clip-bottom),
+        0 var(--clip-bottom),
+        var(--clip-edges) 100%,
+        var(--clip-further) var(--clip-further)
+    );
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    filter: brightness(var(--brightness-hover));
+    cursor: grab;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+    filter: brightness(var(--brightness-down));
+    cursor: grabbing;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(var(--track-color) 0 0) scroll no-repeat center /
+        100% calc(var(--track-height) + 1px);
+}
+
+/* chrome slider style ends here */
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
 .range::-moz-range-progress {
     height: 8px;
     border-radius: 8px;
     background-color: var(--Soft-Cyan);
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-    height: 8px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--Light-Grayish-Blue-slider);
 }
 
 .range::-moz-range-track {
@@ -335,7 +424,7 @@ footer {
         font-size: 16px;
     }
     .range-container {
-        top: 45%;
+        top: 105px;
     }
     .range {
         width: 500px;
