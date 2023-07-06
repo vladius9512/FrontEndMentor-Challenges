@@ -228,7 +228,7 @@ input[type="range"] {
 input[type="range"] {
     --track-height: 8px;
     --track-color: var(--Light-Grayish-Blue-slider);
-    --brightness-hover: 180%;
+    --brightness-hover: 110%;
     --brightness-down: 80%;
     --clip-edges: 0.125em;
 }
@@ -268,19 +268,6 @@ input[type="range"]::-webkit-slider-thumb {
     height: var(--thumb-height);
 }
 
-input[type="range"]::-webkit-slider-thumb {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--Strong-Cyan);
-    background-image: url("./images/icon-slider.svg");
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: 50%;
-    border: none;
-    box-shadow: 0 15px 25px 2px var(--Soft-Cyan);
-}
-
 input[type="range"]::-webkit-slider-runnable-track,
 input[type="range"]::-webkit-slider-thumb {
     position: relative;
@@ -295,9 +282,14 @@ input[type="range"]::-webkit-slider-thumb {
         100vmax currentColor;
 
     width: var(--thumb-width, var(--thumb-height));
-    background: linear-gradient(currentColor 0 0) scroll no-repeat left center /
-        50% calc(var(--track-height) + 1px);
+    background: url("./images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 50%;
+    box-shadow: 0 15px 25px 2px var(--Soft-Cyan);
+
     background-color: currentColor;
+    background-color: var(--Strong-Cyan);
     box-shadow: var(--box-fill);
     border-radius: var(--thumb-width, var(--thumb-height));
 
