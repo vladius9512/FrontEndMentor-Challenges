@@ -1,4 +1,4 @@
-let steps = ["8.00", "12.00", "16.00", "24.00", "36.00"];
+const steps = ["8.00", "12.00", "16.00", "24.00", "36.00"];
 
 const yearlySteps = ["72.00", "108.00", "144.00", "216.00", "324.00"];
 const pageviews = {
@@ -20,53 +20,68 @@ const displayPageviews = document.getElementsByClassName("pageviews")[0];
 const slider = document.querySelector("#slider");
 yearly.addEventListener("change", (e) => {
     if (yearly.checked) {
-        slider.min = 72;
-        slider.max = 324;
-        setPrice(72);
-        setPageviews(pageviews[72]);
+        slider.min = 5;
+        slider.max = 9;
+        slider.ariaValueMin = 5;
+        slider.ariaValueMax = 9;
+        slider.ariaValueNow = 7;
+        slider.value = 7;
+        setPrice(yearlySteps[2]);
+        setPageviews(pageviews[108]);
     } else {
-        slider.min = 8;
-        slider.max = 36;
-        setPrice(36);
-        setPageviews(pageviews[36]);
+        slider.min = 0;
+        slider.max = 4;
+        slider.ariaValueMin = 0;
+        slider.ariaValueMax = 4;
+        slider.ariaValueNow = 2;
+        slider.value = 2;
+        setPrice(steps[2]);
+        setPageviews(pageviews[16]);
     }
 });
 
 slider.addEventListener("change", (e) => {
-    if (yearly.checked) {
-        yearlySteps.forEach((v, i) => {
-            if (
-                e.target.value <= parseFloat(v) &&
-                !yearlySteps.includes(e.target.value)
-            ) {
-                e.target.value =
-                    i > 0
-                        ? parseFloat(v) - e.target.value <
-                          (parseFloat(v) - parseFloat(yearlySteps[i - 1])) / 2
-                            ? v
-                            : yearlySteps[i - 1]
-                        : v;
-            }
-            setPrice(e.target.value);
-            setPageviews(pageviews[parseFloat(e.target.value)]);
-        });
-    } else {
-        steps.forEach((v, i) => {
-            if (
-                e.target.value <= parseFloat(v) &&
-                !steps.includes(e.target.value)
-            ) {
-                e.target.value =
-                    i > 0
-                        ? parseFloat(v) - e.target.value <
-                          (parseFloat(v) - parseFloat(steps[i - 1])) / 2
-                            ? v
-                            : steps[i - 1]
-                        : v;
-            }
-            setPrice(e.target.value);
-            setPageviews(pageviews[parseFloat(e.target.value)]);
-        });
+    switch (e.target.value) {
+        case "0":
+            setPrice(steps[0]);
+            setPageviews(pageviews[8]);
+            break;
+        case "1":
+            setPrice(steps[1]);
+            setPageviews(pageviews[12]);
+            break;
+        case "2":
+            setPrice(steps[2]);
+            setPageviews(pageviews[16]);
+            break;
+        case "3":
+            setPrice(steps[3]);
+            setPageviews(pageviews[24]);
+            break;
+        case "4":
+            setPrice(steps[4]);
+            setPageviews(pageviews[36]);
+            break;
+        case "5":
+            setPrice(yearlySteps[0]);
+            setPageviews(pageviews[72]);
+            break;
+        case "6":
+            setPrice(yearlySteps[1]);
+            setPageviews(pageviews[108]);
+            break;
+        case "7":
+            setPrice(yearlySteps[2]);
+            setPageviews(pageviews[144]);
+            break;
+        case "8":
+            setPrice(yearlySteps[3]);
+            setPageviews(pageviews[216]);
+            break;
+        case "9":
+            setPrice(yearlySteps[4]);
+            setPageviews(pageviews[324]);
+            break;
     }
 });
 
