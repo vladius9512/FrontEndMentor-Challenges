@@ -3,10 +3,9 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let interval = null;
 
 const links = document.querySelectorAll("a");
-console.log(links);
 
 links.forEach((link) => {
-    link.onmouseover = (event) => {
+    link.addEventListener("mouseover", (event) => {
         let iteration = 0;
 
         clearInterval(interval);
@@ -28,5 +27,5 @@ links.forEach((link) => {
             }
             iteration += 1 / 3;
         }, 1);
-    };
+    });
 });
