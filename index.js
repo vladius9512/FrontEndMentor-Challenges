@@ -3,6 +3,8 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let interval = null;
 
 const links = document.querySelectorAll("a");
+const desktopBtn = document.getElementById("desktop");
+const mobileBtn = document.getElementById("mobile");
 
 links.forEach((link) => {
     link.addEventListener("mouseover", (event) => {
@@ -28,4 +30,7 @@ links.forEach((link) => {
             iteration += 1 / 3;
         }, 1);
     });
+});
+mobileBtn.addEventListener("mouseover", (e) => {
+    const img = mobileBtn.parentElement.parentElement.children[0].children[0];
 });
