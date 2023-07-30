@@ -2,32 +2,31 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let interval = null;
 
-const links = document.querySelectorAll("a");
-const desktopBtn = document.getElementById("desktop");
-const mobileBtn = document.getElementById("mobile");
-/*
-links.forEach((link) => {
-    link.addEventListener("mouseover", (event) => {
-        let iteration = 0;
+const h2 = document.getElementsByTagName("h2")[0];
+const h2Text = h2.innerText;
 
-        clearInterval(interval);
+function hackerEffect() {
+    let iteration = 0;
 
-        interval = setInterval(() => {
-            event.target.innerText = event.target.innerText
-                .split("")
-                .map((letter, index) => {
-                    if (index < iteration) {
-                        return event.target.dataset.value[index];
-                    }
+    clearInterval(interval);
 
-                    return letters[Math.floor(Math.random() * 26)];
-                })
-                .join("");
+    interval = setInterval(() => {
+        h2.innerText = h2.innerText
+            .split("")
+            .map((letter, index) => {
+                if (index < iteration) {
+                    return h2Text[index];
+                }
 
-            if (iteration >= event.target.dataset.value.length) {
-                clearInterval(interval);
-            }
-            iteration += 1 / 3;
-        }, 1);
-    });
-});*/
+                return letters[Math.floor(Math.random() * 26)];
+            })
+            .join("");
+
+        if (iteration >= h2Text.length) {
+            clearInterval(interval);
+        }
+        iteration += 1 / 3;
+    }, 30);
+}
+hackerEffect();
+setInterval(hackerEffect, 5000);
