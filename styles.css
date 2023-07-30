@@ -31,7 +31,7 @@ section {
     scroll-snap-align: start;
 }
 
-main section:nth-child(1) {
+main section {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,7 +61,7 @@ a {
 }
 
 .img-container {
-    width: 400px;
+    width: 25rem;
     max-height: auto;
     position: relative;
     display: flex;
