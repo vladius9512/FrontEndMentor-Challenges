@@ -3,8 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- displays site properly based on user's device -->
-
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap"
+            rel="stylesheet"
+        />
         <link
             rel="icon"
             type="image/png"
@@ -13,74 +18,85 @@
         />
 
         <title>Frontend Mentor | Notifications page</title>
-
-        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-        <style>
-            .attribution {
-                font-size: 11px;
-                text-align: center;
-            }
-            .attribution a {
-                color: hsl(228, 45%, 44%);
-            }
-        </style>
     </head>
     <body>
         <main>
             <div class="top-container">
                 <div class="notifications-numbers-container">
-                    Notifications
+                    <h1>Notifications</h1>
                     <div class="unseen-wrapper">3</div>
                 </div>
                 Mark all as read
             </div>
-            <div class="notification-container">
+            <div class="notification-container notseen">
                 <div class="image-wrapper">
-                    <img src="" alt="" />
+                    <img
+                        src="./assets/images/avatar-mark-webber.webp"
+                        alt="avatar-mark-webber"
+                    />
                 </div>
-                <div class="message-container">
-                    <div class="friend-wrapper">Mark Webber</div>
-                    <div class="action-wrapper">
-                        reacted to your recent post
+                <div class="information-container">
+                    <div class="message-container">
+                        <div class="friend-wrapper">Mark Webber</div>
+                        <div class="action-wrapper">
+                            reacted to your recent post
+                        </div>
+                        <div class="post-wrapper">
+                            My first tournament today!
+                        </div>
                     </div>
-                    <div class="post-wrapper">My first tournament today!</div>
+                    <div class="timer-wrapper">1m ago</div>
                 </div>
-                <div class="timer-wrapper">1m ago</div>
+            </div>
+            <div class="notification-container notseen">
+                <div class="image-wrapper">
+                    <img
+                        src="./assets/images/avatar-angela-gray.webp"
+                        alt="avatar-angela-gray"
+                    />
+                </div>
+                <div class="information-container">
+                    <div class="message-container">
+                        <div class="friend-wrapper">Angela Gray</div>
+                        <div class="action-wrapper">followed you</div>
+                        <div class="post-wrapper"></div>
+                    </div>
+                    <div class="timer-wrapper">5m ago</div>
+                </div>
+            </div>
+            <div class="notification-container notseen">
+                <div class="image-wrapper">
+                    <img
+                        src="./assets/images/avatar-jacob-thompson.webp"
+                        alt="avatar-jacob-thompson"
+                    />
+                </div>
+                <div class="information-container">
+                    <div class="message-container">
+                        <div class="friend-wrapper">Jacob Thompson</div>
+                        <div class="action-wrapper">has joined your group</div>
+                        <div class="post-wrapper">Chess Club</div>
+                    </div>
+                    <div class="timer-wrapper">1 day ago</div>
+                </div>
             </div>
             <div class="notification-container">
                 <div class="image-wrapper">
-                    <img src="" alt="" />
+                    <img
+                        src="./assets/images/avatar-rizky-hasanuddin.webp"
+                        alt="avatar-rizky-hasanuddin"
+                    />
                 </div>
-
-                <div class="message-container">
-                    <div class="friend-wrapper">Angela Gray</div>
-                    <div class="action-wrapper">followed you</div>
-                    <div class="post-wrapper"></div>
+                <div class="information-container">
+                    <div class="message-container">
+                        <div class="friend-wrapper">Rizky Hasanuddin</div>
+                        <div class="action-wrapper">
+                            sent you a private message
+                        </div>
+                        <div class="post-wrapper"></div>
+                    </div>
+                    <div class="timer-wrapper">5 days ago</div>
                 </div>
-                <div class="timer-wrapper">5m ago</div>
-            </div>
-            <div class="notification-container">
-                <div class="image-wrapper">
-                    <img src="" alt="" />
-                </div>
-
-                <div class="message-container">
-                    <div class="friend-wrapper">Jacob Thompson</div>
-                    <div class="action-wrapper">has joined your group</div>
-                    <div class="post-wrapper">Chess Club</div>
-                </div>
-                <div class="timer-wrapper">1 day ago</div>
-            </div>
-            <div class="notification-container">
-                <div class="image-wrapper">
-                    <img src="" alt="" />
-                </div>
-                <div class="message-container">
-                    <div class="friend-wrapper">Rizky Hasanuddin</div>
-                    <div class="action-wrapper">sent you a private message</div>
-                    <div class="post-wrapper"></div>
-                </div>
-                <div class="timer-wrapper">5 days ago</div>
                 <div class="private-message">
                     Hello, thanks for setting up the Chess Club. I've been a
                     member for a few weeks now and I'm already having lots of
@@ -89,41 +105,57 @@
             </div>
             <div class="notification-container">
                 <div class="image-wrapper">
-                    <img src="" alt="" />
+                    <img
+                        src="./assets/images/avatar-kimberly-smith.webp"
+                        alt="avatar-kimberly-smith"
+                    />
                 </div>
-
-                <div class="message-container">
-                    <div class="friend-wrapper">Kimberly Smith</div>
-                    <div class="action-wrapper">commented on your picture</div>
-                    <div class="post-wrapper"></div>
+                <div class="information-container">
+                    <div class="message-container">
+                        <div class="friend-wrapper">Kimberly Smith</div>
+                        <div class="action-wrapper">
+                            commented on your picture
+                        </div>
+                        <div class="post-wrapper"></div>
+                    </div>
+                    <div class="timer-wrapper">1 week ago</div>
                 </div>
-                <div class="timer-wrapper">1 week ago</div>
             </div>
             <div class="notification-container">
                 <div class="image-wrapper">
-                    <img src="" alt="" />
+                    <img
+                        src="./assets/images/avatar-nathan-peterson.webp"
+                        alt="avatar-nathan-peterson"
+                    />
                 </div>
-                <div class="message-container">
-                    <div class="friend-wrapper">Nathan Peterson</div>
-                    <div class="action-wrapper">
-                        reacted to your recent post
+                <div class="information-container">
+                    <div class="message-container">
+                        <div class="friend-wrapper">Nathan Peterson</div>
+                        <div class="action-wrapper">
+                            reacted to your recent post
+                        </div>
+                        <div class="post-wrapper">
+                            5 end-game strategies to increase your win rate
+                        </div>
                     </div>
-                    <div class="post-wrapper">
-                        5 end-game strategies to increase your win rate
-                    </div>
+                    <div class="timer-wrapper">2 weeks ago</div>
                 </div>
-                <div class="timer-wrapper">2 weeks ago</div>
             </div>
             <div class="notification-container">
                 <div class="image-wrapper">
-                    <img src="" alt="" />
+                    <img
+                        src="./assets/images/avatar-anna-kim.webp"
+                        alt="avatar-anna-kim"
+                    />
                 </div>
-                <div class="message-container">
-                    <div class="friend-wrapper">Anna Kim</div>
-                    <div class="action-wrapper">left the group</div>
-                    <div class="post-wrapper">Chess Club</div>
+                <div class="information-container">
+                    <div class="message-container">
+                        <div class="friend-wrapper">Anna Kim</div>
+                        <div class="action-wrapper">left the group</div>
+                        <div class="post-wrapper">Chess Club</div>
+                    </div>
+                    <div class="timer-wrapper">2 weeks ago</div>
                 </div>
-                <div class="timer-wrapper">2 weeks ago</div>
             </div>
         </main>
 

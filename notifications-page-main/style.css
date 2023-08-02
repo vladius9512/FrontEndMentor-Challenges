@@ -1,0 +1,66 @@
+:root {
+    --red: hsl(1, 90%, 64%);
+    --blue: hsl(219, 85%, 26%);
+    --white: hsl(0, 0%, 100%);
+    --very-light-grayish-blue: hsl(210, 60%, 98%);
+    --light-grayish-blue-1: hsl(211, 68%, 94%);
+    --light-grayish-blue-2: hsl(205, 33%, 90%);
+    --grayish-blue: hsl(219, 14%, 63%);
+    --dark-grayish-blue: hsl(219, 12%, 42%);
+    --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+main {
+    padding: 0.5rem;
+}
+
+.top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--dark-grayish-blue);
+}
+
+.notifications-numbers-container {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.unseen-wrapper {
+    color: var(--white);
+    background-color: var(--blue);
+    width: 2rem;
+    height: 1.5rem;
+    align-items: center;
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+}
+
+h1 {
+    color: var(--very-dark-blue);
+    font-size: 20px;
+}
+
+.notification-container {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+.notseen {
+    background-color: var(--very-light-grayish-blue);
+}
+
+.image-wrapper img {
+    width: 50px;
+    height: 50px;
+}
