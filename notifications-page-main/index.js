@@ -1,14 +1,7 @@
 const main = document.getElementsByTagName("main")[0];
-
-const notification = {
-    imgsrc: null,
-    friendName: null,
-    action: null,
-    pastPost: null,
-    time: null,
-    message: null,
-    seen: false,
-};
+const unseenNotifications =
+    document.getElementsByClassName("unseen-wrapper")[0];
+console.log(unseenNotifications);
 
 const notificationsArray = [];
 
@@ -23,15 +16,26 @@ function createElement(elementName, className, innerText) {
     return elem;
 }
 
-function createNotification(imgsrc, friendName, action, time, pastPost) {
+function createNotification(
+    imgsrc,
+    imgalt,
+    friendName,
+    action,
+    time,
+    pastPost,
+    seen
+) {
     const notificationContainerDiv = createElement(
         "div",
         "notification-container"
     );
+    if (seen === false) {
+        notificationContainerDiv.classList.add("notseen");
+    }
     const imageWrapperDiv = createElement("div", "image-wrapper");
     const img = createElement("img");
     img.src = imgsrc;
-    img.alt = "avatar-mark-webber";
+    img.alt = imgalt;
     const informationContainerDiv = createElement(
         "div",
         "information-container"
@@ -52,10 +56,115 @@ function createNotification(imgsrc, friendName, action, time, pastPost) {
     main.appendChild(notificationContainerDiv);
 }
 
-createNotification(
+function createNotificationObject(
+    imgsrc,
+    imgalt,
+    friendName,
+    action,
+    pastPost,
+    time,
+    message,
+    seen
+) {
+    const notification = {
+        imgsrc: imgsrc,
+        imgalt: imgalt,
+        friendName: friendName,
+        action: action,
+        pastPost: pastPost,
+        time: time,
+        message: message,
+        seen: seen,
+    };
+    notificationsArray.push(notification);
+}
+
+createNotificationObject(
     "./assets/images/avatar-mark-webber.webp",
+    "avatar-mark-webber",
     "Mark Webber",
     "reacted to your recent post",
     "My first tournament today!",
-    "1m ago"
+    "1m ago",
+    null,
+    false
 );
+createNotificationObject(
+    "./assets/images/avatar-angela-gray.webp",
+    "avatar-angela-gray",
+    "Angela Gray",
+    "followed you",
+    null,
+    "5m ago",
+    null,
+    false
+);
+
+createNotificationObject(
+    "./assets/images/avatar-jacob-thompson.webp",
+    "avatar-jacob-thompson",
+    "Jacob Thompson",
+    "has joined your group",
+    "Chess Club",
+    "1day ago",
+    null,
+    false
+);
+
+//private message notification
+createNotificationObject(
+    "./assets/images/avatar-rizky-hasanuddin.webp",
+    "avatar-rizky-hasanuddin",
+    "Rizky Hasanuddin",
+    "sent you a private message",
+    null,
+    "5 days ago",
+    "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+    true
+);
+
+//picture comment notification
+createNotificationObject(
+    "./assets/images/avatar-kimberly-smith.webp",
+    "avatar-kimberly-smith",
+    "Kimberly Smith",
+    "commented on your picture",
+    null,
+    "1 week ago",
+    null,
+    true
+);
+
+createNotificationObject(
+    "./assets/images/avatar-nathan-peterson.webp",
+    "avatar-nathan-peterson",
+    "Nathan Peterson",
+    "reacted to your recent post",
+    "5 end-game strategies to increase your win rate",
+    "2 weeks ago",
+    null,
+    true
+);
+
+createNotificationObject(
+    "./assets/images/avatar-anna-kim.webp",
+    "avatar-anna-kim",
+    "Anna Kim",
+    "left the group",
+    "Chess Club",
+    "2 weeks ago",
+    null,
+    true
+);
+
+createNotification(
+    "./assets/images/avatar-mark-webber.webp",
+    "avatar-mark-webber",
+    "Mark Webber",
+    "reacted to your recent post",
+    "My first tournament today!",
+    "1m ago",
+    false
+);
+
+//create function to count the unseen notifications
