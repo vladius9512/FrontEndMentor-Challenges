@@ -1,7 +1,6 @@
 const main = document.getElementsByTagName("main")[0];
 const unseenNotifications =
     document.getElementsByClassName("unseen-wrapper")[0];
-console.log(unseenNotifications);
 
 const notificationsArray = [];
 
@@ -168,3 +167,19 @@ createNotification(
 );
 
 //create function to count the unseen notifications
+
+function checkSeenNotifications(notificationsArray) {
+    let unseenCounter = 0;
+    notificationsArray.forEach((notificationObject) => {
+        if (notificationObject.seen === false) {
+            unseenCounter++;
+        }
+    });
+    return unseenCounter;
+}
+
+function updateSeenNotifications(notificationsArray) {
+    unseenNotifications.innerText = checkSeenNotifications(notificationsArray);
+}
+
+updateSeenNotifications(notificationsArray);
