@@ -24,6 +24,8 @@ function createNotification(
     pastPost,
     seen
 ) {
+    let pictureDiv = null,
+        postWrapperDiv = null;
     const notificationContainerDiv = createElement(
         "div",
         "notification-container"
@@ -39,16 +41,38 @@ function createNotification(
         "div",
         "information-container"
     );
-    const messageContainerDiv = createElement("div", "message-container");
+    let messageContainerDiv = createElement("div", "message-container");
+    if (pastPost !== null) {
+        if (pastPost.endsWith("webp")) {
+            pictureDiv = createElement("div", "picture-wrapper");
+            const picture = createElement("img");
+            picture.src = pastPost;
+            picture.alt = pastPost.slice(16);
+            pictureDiv.appendChild(picture);
+            messageContainerDiv.classList.add("grid");
+        } else {
+            postWrapperDiv = createElement("div", "post-wrapper", pastPost);
+        }
+    }
     const friendWrapperDiv = createElement("div", "friend-wrapper", friendName);
     const actionWrapperDiv = createElement("div", "action-wrapper", action);
-    const postWrapperDiv = createElement("div", "post-wrapper", pastPost);
     const timeWrapperDiv = createElement("div", "time-wrapper", time);
-    messageContainerDiv.append(
-        friendWrapperDiv,
-        actionWrapperDiv,
-        postWrapperDiv
-    );
+    if (pictureDiv === null && postWrapperDiv === null) {
+        messageContainerDiv.append(friendWrapperDiv, actionWrapperDiv);
+    } else if (postWrapperDiv === null) {
+        messageContainerDiv.append(
+            friendWrapperDiv,
+            actionWrapperDiv,
+            pictureDiv
+        );
+    } else {
+        messageContainerDiv.append(
+            friendWrapperDiv,
+            actionWrapperDiv,
+            postWrapperDiv
+        );
+    }
+
     informationContainerDiv.append(messageContainerDiv, timeWrapperDiv);
     imageWrapperDiv.append(img);
     notificationContainerDiv.append(imageWrapperDiv, informationContainerDiv);
@@ -128,7 +152,7 @@ createNotificationObject(
     "avatar-kimberly-smith",
     "Kimberly Smith",
     "commented on your picture",
-    null,
+    "./assets/images/image-chess.webp",
     "1 week ago",
     null,
     true
@@ -156,18 +180,6 @@ createNotificationObject(
     true
 );
 
-createNotification(
-    "./assets/images/avatar-mark-webber.webp",
-    "avatar-mark-webber",
-    "Mark Webber",
-    "reacted to your recent post",
-    "My first tournament today!",
-    "1m ago",
-    false
-);
-
-//create function to count the unseen notifications
-
 function checkSeenNotifications(notificationsArray) {
     let unseenCounter = 0;
     notificationsArray.forEach((notificationObject) => {
@@ -183,3 +195,15 @@ function updateSeenNotifications(notificationsArray) {
 }
 
 updateSeenNotifications(notificationsArray);
+
+notificationsArray.forEach((notification) => {
+    createNotification(
+        notification.imgsrc,
+        notification.imgalt,
+        notification.friendName,
+        notification.action,
+        notification.time,
+        notification.pastPost,
+        notification.seen
+    );
+});
