@@ -1,6 +1,7 @@
 const main = document.getElementsByTagName("main")[0];
 const unseenNotifications =
     document.getElementsByClassName("unseen-wrapper")[0];
+const readAll = document.getElementById("readAll");
 
 const notificationsArray = [];
 
@@ -22,10 +23,12 @@ function createNotification(
     action,
     time,
     pastPost,
-    seen
+    seen,
+    message
 ) {
     let pictureDiv = null,
         postWrapperDiv = null;
+    privateMessageDiv = null;
     const notificationContainerDiv = createElement(
         "div",
         "notification-container"
@@ -54,9 +57,9 @@ function createNotification(
             postWrapperDiv = createElement("div", "post-wrapper", pastPost);
         }
     }
-    const friendWrapperDiv = createElement("div", "friend-wrapper", friendName);
-    const actionWrapperDiv = createElement("div", "action-wrapper", action);
-    const timeWrapperDiv = createElement("div", "time-wrapper", time);
+    const friendWrapperDiv = createElement("p", "friend-wrapper", friendName);
+    const actionWrapperDiv = createElement("p", "action-wrapper", action);
+    const timeWrapperDiv = createElement("p", "time-wrapper", time);
     if (pictureDiv === null && postWrapperDiv === null) {
         messageContainerDiv.append(friendWrapperDiv, actionWrapperDiv);
     } else if (postWrapperDiv === null) {
@@ -72,10 +75,14 @@ function createNotification(
             postWrapperDiv
         );
     }
-
     informationContainerDiv.append(messageContainerDiv, timeWrapperDiv);
     imageWrapperDiv.append(img);
     notificationContainerDiv.append(imageWrapperDiv, informationContainerDiv);
+    if (message != null) {
+        privateMessageDiv = createElement("div", "private-message", message);
+        notificationContainerDiv.classList.add("prvMsg");
+        notificationContainerDiv.appendChild(privateMessageDiv);
+    }
     main.appendChild(notificationContainerDiv);
 }
 
@@ -204,6 +211,20 @@ notificationsArray.forEach((notification) => {
         notification.action,
         notification.time,
         notification.pastPost,
-        notification.seen
+        notification.seen,
+        notification.message
     );
+});
+
+readAll.addEventListener("click", () => {
+    notificationsArray.forEach((notification) => {
+        if (notification.seen === false) {
+            notification.seen = true;
+        }
+    });
+    const notSeenArray = document.getElementsByClassName("notseen");
+    Array.from(notSeenArray).forEach((element) => {
+        element.classList.remove("notseen");
+    });
+    updateSeenNotifications(notificationsArray);
 });
