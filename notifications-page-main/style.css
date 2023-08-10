@@ -95,3 +95,15 @@ h1 {
 p {
     margin: 0;
 }
+
+.action-wrapper {
+    margin-left: 3px;
+}
+
+.post-wrapper {
+    margin-left: 3px;
+}
+
+.friend-wrapper {
+    font-weight: bold;
+}

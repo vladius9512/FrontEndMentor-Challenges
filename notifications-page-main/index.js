@@ -54,26 +54,25 @@ function createNotification(
             pictureDiv.appendChild(picture);
             messageContainerDiv.classList.add("grid");
         } else {
-            postWrapperDiv = createElement("div", "post-wrapper", pastPost);
+            postWrapperDiv = createElement("span", "post-wrapper", pastPost);
         }
     }
-    const friendWrapperDiv = createElement("p", "friend-wrapper", friendName);
-    const actionWrapperDiv = createElement("p", "action-wrapper", action);
-    const timeWrapperDiv = createElement("p", "time-wrapper", time);
+    const paragraph = createElement("p");
+    const friendWrapperSpan = createElement(
+        "span",
+        "friend-wrapper",
+        friendName
+    );
+    const actionWrapperSpan = createElement("span", "action-wrapper", action);
+    paragraph.append(friendWrapperSpan, actionWrapperSpan);
+    const timeWrapperDiv = createElement("div", "time-wrapper", time);
     if (pictureDiv === null && postWrapperDiv === null) {
-        messageContainerDiv.append(friendWrapperDiv, actionWrapperDiv);
+        messageContainerDiv.append(paragraph);
     } else if (postWrapperDiv === null) {
-        messageContainerDiv.append(
-            friendWrapperDiv,
-            actionWrapperDiv,
-            pictureDiv
-        );
+        messageContainerDiv.append(paragraph, pictureDiv);
     } else {
-        messageContainerDiv.append(
-            friendWrapperDiv,
-            actionWrapperDiv,
-            postWrapperDiv
-        );
+        paragraph.appendChild(postWrapperDiv);
+        messageContainerDiv.appendChild(paragraph);
     }
     informationContainerDiv.append(messageContainerDiv, timeWrapperDiv);
     imageWrapperDiv.append(img);
