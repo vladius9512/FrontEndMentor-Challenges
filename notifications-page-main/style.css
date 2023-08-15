@@ -136,3 +136,59 @@ p {
 footer {
     margin-top: 50px;
 }
+
+@media screen and (min-width: 720px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--very-light-grayish-blue);
+    }
+    main {
+        width: 650px;
+        background-color: var(--white);
+        padding: 1rem 2rem 0 2rem;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 2rem;
+    }
+    .information-container {
+        flex-grow: 1;
+    }
+    .notification-container {
+        margin: unset;
+    }
+    .prvMsg {
+        grid-template-rows: 40px 1fr;
+    }
+    main div:nth-child(6) .time-wrapper {
+        margin-top: -1.2rem;
+    }
+    .friend-wrapper:hover {
+        cursor: pointer;
+        color: var(--blue);
+    }
+    .post-wrapper:hover {
+        cursor: pointer;
+        color: var(--blue);
+    }
+    .picture-wrapper img:hover {
+        cursor: pointer;
+        border: 2px solid var(--light-grayish-blue-1);
+        border-radius: 8px;
+    }
+    #readAll:hover {
+        cursor: pointer;
+        color: var(--blue);
+    }
+    .private-message {
+        border-radius: 5px;
+    }
+    .private-message:hover {
+        cursor: pointer;
+        background-color: var(--light-grayish-blue-1);
+    }
+}
