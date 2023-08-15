@@ -54,6 +54,7 @@ h1 {
     gap: 1rem;
     margin: 1rem 0;
     padding: 1rem;
+    border-radius: 8px;
 }
 
 .notseen {
@@ -97,13 +98,41 @@ p {
 }
 
 .action-wrapper {
-    margin-left: 3px;
+    margin-left: 5px;
+    color: var(--dark-grayish-blue);
 }
 
 .post-wrapper {
-    margin-left: 3px;
+    margin-left: 5px;
+    color: var(--dark-grayish-blue);
+    font-weight: bold;
 }
 
 .friend-wrapper {
     font-weight: bold;
+}
+
+.time-wrapper {
+    color: var(--grayish-blue);
+    margin-top: 2px;
+}
+
+.group {
+    color: var(--blue);
+}
+
+.private-message {
+    color: var(--dark-grayish-blue);
+}
+
+.unseen-notification {
+    background-color: var(--red);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+footer {
+    margin-top: 50px;
 }

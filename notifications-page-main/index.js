@@ -40,6 +40,11 @@ function createNotification(
     const img = createElement("img");
     img.src = imgsrc;
     img.alt = imgalt;
+    const newNotificationCircle = createElement("span", "unseen-notification");
+    newNotificationCircle.style.display = "none";
+    if (!seen) {
+        newNotificationCircle.style.display = "inline-block";
+    }
     const informationContainerDiv = createElement(
         "div",
         "information-container"
@@ -64,14 +69,22 @@ function createNotification(
         friendName
     );
     const actionWrapperSpan = createElement("span", "action-wrapper", action);
-    paragraph.append(friendWrapperSpan, actionWrapperSpan);
+    if (action.includes("group")) {
+        postWrapperDiv.classList.add("group");
+    }
+    paragraph.append(
+        friendWrapperSpan,
+        actionWrapperSpan,
+        newNotificationCircle
+    );
     const timeWrapperDiv = createElement("div", "time-wrapper", time);
     if (pictureDiv === null && postWrapperDiv === null) {
         messageContainerDiv.append(paragraph);
     } else if (postWrapperDiv === null) {
         messageContainerDiv.append(paragraph, pictureDiv);
     } else {
-        paragraph.appendChild(postWrapperDiv);
+        paragraph.removeChild(newNotificationCircle);
+        paragraph.append(postWrapperDiv, newNotificationCircle);
         messageContainerDiv.appendChild(paragraph);
     }
     informationContainerDiv.append(messageContainerDiv, timeWrapperDiv);
@@ -222,8 +235,12 @@ readAll.addEventListener("click", () => {
         }
     });
     const notSeenArray = document.getElementsByClassName("notseen");
+    const circleArray = document.getElementsByClassName("unseen-notification");
     Array.from(notSeenArray).forEach((element) => {
         element.classList.remove("notseen");
+    });
+    Array.from(circleArray).forEach((element) => {
+        element.style.display = "none";
     });
     updateSeenNotifications(notificationsArray);
 });
